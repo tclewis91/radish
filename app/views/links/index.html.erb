@@ -13,6 +13,11 @@
 
   <tbody>
     <% @links.each do |link| %>
+    <div class="link row">
+    <h2>
+      <%= link_to link.title, link %><br>
+      <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
+    </h2>
       <tr>
         <td><%= link.title %></td>
         <td><%= link.url %></td>
@@ -22,18 +27,6 @@
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
       </tr>
-  <div class="btn-group">
-  <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-  <i class="material-icons">thumb_up</i>    Upvote
-    <%= link.get_upvotes.size %>
-  <% end %>
-  <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-    <i class="material-icons">thumb_down</i>
-    Downvote
-    <%= link.get_downvotes.size %>
-  <% end %>
-</div>
-    <% end %>
   </tbody>
 </table>
 
