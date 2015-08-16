@@ -15,8 +15,8 @@
   <% end %>
 <nav>
   <div class="nav-wrapper">
-    <class="brand-logo right">
-   <i class="material-icons">loyalty</i>
+    <a href="#" class="brand-logo right">
+    <%= image_tag 'radish1.png' %></a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
     <% if user_signed_in? %>
       <li><%= link_to 'Submit link', new_link_path %></li>
