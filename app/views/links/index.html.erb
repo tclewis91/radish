@@ -14,12 +14,10 @@
   <tbody>
     <% @links.each do |link| %>
     <div class="link row">
-    <h2>
-      <%= link_to link.title, link %><br>
-      <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
+
     </h2>
       <tr>
-        <td><%= link.title %></td>
+        <td><%= link_to link.title %></td>
         <td><%= link.url %></td>
         <td><%= link_to 'Show', link %></td>
         <% if link.user == current_user %>
